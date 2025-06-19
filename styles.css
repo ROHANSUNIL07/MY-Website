@@ -1,0 +1,261 @@
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #111111, #1e1e1e);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* HEADER STACK */
+.header-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem 2rem;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ABOUT BUTTON UNDER LUTHER */
+.about-button {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: #ffae00;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.about-button:hover {
+  background-color: #222;
+  transform: scale(1.03);
+}
+
+/* HERO SECTION */
+.hero {
+  padding: 6rem 3rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.hello {
+  color: #ffae00;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  line-height: 1.2;
+  color: #fff;
+  max-width: 90%;
+  animation: slideInRight 1.2s ease-out forwards;
+}
+
+/* ABOUT SECTION */
+.about {
+  padding: 5rem 3rem;
+  background-color: #111;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-content h2 {
+  color: #ffae00;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #eee;
+  margin-bottom: 2rem;
+}
+
+.download-btn {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: #ffae00;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border: 1px solid #333;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #222;
+}
+
+/* LINKEDIN STRIP */
+.linkedin-strip {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding: 1rem 0.5rem;
+  background-color: #0d0d0d;
+  border-left: 1px solid #333;
+  z-index: 999;
+}
+
+.linkedin-strip a {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.linkedin-strip a:hover {
+  opacity: 1;
+  color: #0a66c2;
+}
+
+/* BACKGROUND DECORATION */
+.circle-bg {
+  position: absolute;
+  top: 0;
+  right: -20%;
+  width: 120%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 150px 150px;
+  pointer-events: none;
+  z-index: -1;
+  animation: parallax 10s linear infinite;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes parallax {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 300px 300px;
+  }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content h2 {
+    justify-content: center;
+  }
+
+  .linkedin-strip {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .about-button {
+    font-size: 0.8rem;
+  }
+}
