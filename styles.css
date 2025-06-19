@@ -259,3 +259,12 @@ body {
     font-size: 0.8rem;
   }
 }
+.about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  color: #333;
+  text-align: justify;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
